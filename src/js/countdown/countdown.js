@@ -7,7 +7,7 @@ let minutesLabelElement = document.getElementById("minutes-label")
 let secondsElement = document.getElementById("seconds")
 let secondsLabelElement = document.getElementById("seconds-label")
 
-const bataweekndDate = new Date('2021-10-23 14:00:00')
+const bataweekndDate = new Date('2021-10-23 15:30:00')
 
 const renderCountdown = () => {
     const nowDate = new Date()
