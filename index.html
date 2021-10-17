@@ -33,7 +33,45 @@
             <p id="seconds-label">&nbsp;</p>
         </div>
     </div>
+    <div class="fireworks-container"></div>
     <script src="src/js/countdown/countdown.js"></script>
+    <script src="dist/fireworks.js"></script>
+    <script>
+        const container = document.querySelector('.fireworks-container')
+
+        const fireworks = new Fireworks({
+            target: container,
+            hue: 120,
+            startDelay: 1,
+            minDelay: 20,
+            maxDelay: 30,
+            speed: 4,
+            acceleration: 1.05,
+            friction: 0.98,
+            gravity: 1,
+            particles: 75,
+            trace: 3,
+            explosion: 5,
+            boundaries: {
+                top: 50,
+                bottom: container.clientHeight,
+                left: 50,
+                right: container.clientWidth
+            },
+        })
+
+        setInterval(() => {
+            const isAfterBataweekndStartDate = bataweekndStartDate - new Date() <= 0
+            const isBeforeBataweekndEndDate = new Date() - bataweekndEndDate <= 0
+            const shouldStartFireworks = isAfterBataweekndStartDate && isBeforeBataweekndEndDate
+
+            if (shouldStartFireworks) {
+                fireworks.start()
+            } else {
+                fireworks.stop()
+            }
+        }, 1000)
+    </script>
 </body>
 
 </html>
