@@ -1,10 +1,10 @@
-const bataweekndStartDate = new Date('2021-10-22 22:00:00')
+const bataweekndStartDate = new Date('2021-10-22 20:00:00')
 const bataweekndEndDate = new Date('2021-10-31 14:00:00')
 
 const buildLabel = (value, label) => value > 1 ? `${label}s` : label
 
 const renderCountdownItem = (item, value, label) => {
-    document.getElementById(`${item}`).innerHTML = value 
+    document.getElementById(`${item}`).innerHTML = value
     document.getElementById(`${item}-label`).innerHTML = buildLabel(value, label)
 }
 
@@ -25,7 +25,7 @@ const renderCountdown = () => {
     const seconds = Math.floor(delta % 60);
 
     const isBataweekndHappening = bataweekndEndDate - nowDate > -1000;
-    
+
     if (isBataweekndHappening) {
         renderCountdownItem('days', days, 'Day')
         renderCountdownItem('hours', hours, 'Hour')
