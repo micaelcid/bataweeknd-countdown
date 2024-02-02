@@ -1,5 +1,5 @@
-const bataweekndStartDate = new Date('2021-10-22 20:00:00')
-const bataweekndEndDate = new Date('2021-10-31 14:00:00')
+const bataweekndStartDate = new Date('2024-02-02 21:00:00')
+const bataweekndEndDate = new Date('2024-02-02 22:00:00')
 
 const buildLabel = (value, label) => value > 1 ? `${label}s` : label
 
